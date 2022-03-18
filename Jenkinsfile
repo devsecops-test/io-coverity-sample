@@ -120,7 +120,7 @@ pipeline {
                     coverity(configName: 'poc-coverity', stream: 'Insec'),
                     blackduck(configName: 'poc-bd', projectName: 'insec-bank', projectVersion: '1.0'),
                     jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
-                    //msteams(configName: 'poc-msteams'), 
+                    msteams(configName: 'poc-msteams'), 
                     buildBreaker(configName: 'poc-bb')
                 ]) {
                     sh 'io --stage workflow --state io_state.json'
@@ -139,7 +139,8 @@ pipeline {
                 script {
 
                     def workflowJSON = readJSON file: 'wf-output.json'
-                 
+                    
+                    /*
                     //Build Breaker
                     if(workflowJSON.breaker.status==true) {
                           echo "Sending Notifications to Teams..."
@@ -159,6 +160,7 @@ pipeline {
                             }
                         }
                     }
+                    */
                 }
                 echo "Security Sign-Off triggered & approved"
             }
