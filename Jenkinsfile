@@ -141,7 +141,7 @@ pipeline {
                     def workflowJSON = readJSON file: 'wf-output.json'
                  
                     //Build Breaker
-                    if($workflowJSON.breaker.status==true) {
+                    if(workflowJSON.breaker.status==true) {
                           echo "Sending Notifications to Teams..."
                           //curl -H 'Content-Type: application/json' -d '{"text": "Breaking the build for application: Insecure Bank"}' <WebHook_URL>
                           echo "Breaking the build based on the identified Vulnerabilities. Setting pipeline to fail"
