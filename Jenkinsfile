@@ -41,7 +41,7 @@ pipeline {
                          projectKey: 'INSEC', 
                          projectName: 'insec-bank'), 
                     buildBreaker(configName: 'poc-bb')]) {
-                        sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor'
+                        sh 'io --stage io Persona.Type=developer Project.Release.Type=minor'
                     }
 
                 script {
