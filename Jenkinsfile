@@ -32,8 +32,8 @@ pipeline {
                     github(
                         branch: 'master',
                         configName: 'poc-github',
-                        owner: 'snps9225',
-                        repositoryName: 'insec-bank'), 
+                        owner: 'devsecops-test',
+                        repositoryName: 'io-coverity-sample'), 
                      jira(
                          assignee: 'karn@synopsys.com', 
                          configName: 'poc-jira', 
