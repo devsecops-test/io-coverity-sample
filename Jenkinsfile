@@ -41,7 +41,7 @@ pipeline {
                          projectKey: 'INSEC', 
                          projectName: 'insec-bank'), 
                     buildBreaker(configName: 'poc-bb')]) {
-                        sh 'io --stage io Persona.Type=developer Project.Release.Type=minor'
+                        sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor'
                     }
 
                 script {
@@ -140,7 +140,7 @@ pipeline {
 
                     def workflowJSON = readJSON file: 'wf-output.json'
                     
-                    /*
+                    
                     //Build Breaker
                     if(workflowJSON.breaker.status==true) {
                           echo "Sending Notifications to Teams..."
@@ -160,7 +160,7 @@ pipeline {
                             }
                         }
                     }
-                    */
+                    
                 }
                 echo "Security Sign-Off triggered & approved"
             }
