@@ -40,7 +40,7 @@ public class DashboardControllerTest {
 
 	@Test
 	public void userDetail() throws Exception {
-		mockMvc.perform(get("/dashboard/userDetail").param("username", "john")//Add a comment
+		mockMvc.perform(get("/dashboard/userDetail").param("username", "john")
 				.principal(principal).accept(MediaType.TEXT_HTML)).andExpect(status().isOk());
 	}
 
