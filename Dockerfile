@@ -28,7 +28,7 @@ ADD license.hdiv /usr/local/tomcat/hdiv/
 # Copy the agent jar
 ADD hdiv-ee-agent.jar /usr/local/tomcat/hdiv/
 
-# Run Tomcat and enjoy!
+# Run Tomcat and enjoy!!
 CMD export JAVA_OPTS="-javaagent:hdiv/hdiv-ee-agent.jar \
   -Dhdiv.config.dir=hdiv/ \
   -Dhdiv.console.url=http://console:8080/hdiv-console-services \
