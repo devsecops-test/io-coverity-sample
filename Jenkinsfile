@@ -37,8 +37,7 @@ pipeline {
                      jira(
                          assignee: 'karn@synopsys.com', 
                          configName: 'poc-jira', 
-                         issueQuery: 'resolution=Unresolved', 
-                         projectKey: 'INSEC', 
+                         issueQuery: 'resolution=Unresolved',
                          projectName: 'insec-bank'),
                     buildBreaker(configName: 'poc-bb')]) {
                         sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor --verbose'
