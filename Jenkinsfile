@@ -59,7 +59,7 @@ pipeline {
         }
 
         
-        stage('SAST- RapidScan') { environment {
+        /*stage('SAST- RapidScan') { environment {
             OSTYPE='linux-gnu' }
             steps {
                 echo 'Running SAST using Sigma - Rapid Scan'
@@ -69,7 +69,7 @@ pipeline {
             }
         }
         
-        /*stage('SAST - Coverity') {
+        stage('SAST - Coverity') {
           when {
             expression { isSASTEnabled }
           }
