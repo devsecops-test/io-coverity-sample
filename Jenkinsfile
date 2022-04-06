@@ -58,7 +58,17 @@ pipeline {
             }
         }
 
-
+        
+        stage('SAST- RapidScan') { environment {
+            OSTYPE='linux-gnu' }
+            steps {
+                echo 'Running SAST using Sigma - Rapid Scan'
+                echo env.OSTYPE
+                synopsysIO(connectors: [rapidScan(configName: 'poc-sigma')]) {
+                sh 'io --stage execution --state io_state.json' }
+            }
+        }
+        
         stage('SAST - Coverity') {
           when {
             expression { isSASTEnabled }
