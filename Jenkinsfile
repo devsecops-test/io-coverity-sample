@@ -41,7 +41,7 @@ pipeline {
                          projectKey: 'INSEC', 
                          projectName: 'insec-bank'), 
                     buildBreaker(configName: 'poc-bb')]) {
-                        sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor'
+                        sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor --verbose'
                     }
 
                 script {
@@ -65,12 +65,12 @@ pipeline {
           }
           steps {
             echo 'Running SAST using Coverity'
-            synopsysIO(connectors: [
+            /*synopsysIO(connectors: [
             coverity(configName: 'poc-coverity',
                      stream: 'Insec'
             )]) {
               sh 'io --stage execution --state io_state.json'
-              }
+              }*/
             }
         }
 
@@ -118,8 +118,8 @@ pipeline {
                 echo 'Execute Workflow Stage'
                 synopsysIO(connectors: [
                     codeDx(configName: 'poc-codedx', projectId: '1'), 
-                    coverity(configName: 'poc-coverity', stream: 'Insec'),
-                    blackduck(configName: 'poc-bd', projectName: 'insec-bank', projectVersion: '1.0'),
+                    //coverity(configName: 'poc-coverity', stream: 'Insec'),
+                    //blackduck(configName: 'poc-bd', projectName: 'insec-bank', projectVersion: '1.0'),
                     jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
                     //msteams(configName: 'poc-msteams'), 
                     buildBreaker(configName: 'poc-bb')
