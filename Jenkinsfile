@@ -34,12 +34,12 @@ pipeline {
                         configName: 'poc-github',
                         owner: 'devsecops-test',
                         repositoryName: 'io-coverity-sample'), 
-                     jira(
+                     /*jira(
                          assignee: 'karn@synopsys.com', 
                          configName: 'poc-jira', 
                          issueQuery: 'resolution=Unresolved', 
                          projectKey: 'INSEC', 
-                         projectName: 'insec-bank'), 
+                         projectName: 'insec-bank'), */
                     buildBreaker(configName: 'poc-bb')]) {
                         sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor --verbose'
                     }
