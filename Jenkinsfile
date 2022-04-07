@@ -63,7 +63,7 @@ pipeline {
             }
         }
         
-        /*stage('SAST - Coverity') {
+        stage('SAST - Coverity') {
           when {
             expression { isSASTEnabled }
           }
@@ -76,7 +76,7 @@ pipeline {
               sh 'io --stage execution --state io_state.json'
               }
             }
-        } */
+        }
 
         stage('SAST Plus Manual') {
             when {
