@@ -71,7 +71,7 @@ pipeline {
             echo 'Running SAST using Coverity'
             synopsysIO(connectors: [
             coverity(configName: 'poc-coverity',
-                     stream: 'Insec'
+                     stream: 'Test'
             )]) {
               sh 'io --stage execution --state io_state.json'
               }
