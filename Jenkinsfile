@@ -121,6 +121,7 @@ pipeline {
                 echo 'Execute Workflow Stage'
                 synopsysIO(connectors: [
                     codeDx(configName: 'poc-codedx', projectId: '1'), 
+                    coverity(configName: 'poc-coverity', stream: 'Test'),
                     jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
                     msteams(configName: 'poc-msteams')
                 ]) {
