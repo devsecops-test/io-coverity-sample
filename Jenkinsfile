@@ -122,8 +122,8 @@ pipeline {
                 synopsysIO(connectors: [
                     //codeDx(configName: 'poc-codedx', projectId: '1'), 
                     //coverity(configName: 'poc-coverity', stream: 'Test'),
-                    //jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
-                    jira(assignee: 'io-user', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
+                    jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
+                    //jira(assignee: 'io-user', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
                     msteams(configName: 'poc-msteams')
                 ]) {
                     sh 'io --stage workflow --state io_state.json'
