@@ -122,7 +122,7 @@ pipeline {
                 synopsysIO(connectors: [
                     //codeDx(configName: 'poc-codedx', projectId: '1'), 
                     //coverity(configName: 'poc-coverity', stream: 'Test'),
-                    jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
+                    jira(assignee: 'karn@synopsys.com', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'GPTES'), 
                     //jira(assignee: 'io-user', configName: 'poc-jira', issueQuery: 'resolution=Unresolved AND labels in (Security, Defect)', projectKey: 'INSEC'), 
                     msteams(configName: 'poc-msteams')
                 ]) {
