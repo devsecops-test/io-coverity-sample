@@ -1,4 +1,4 @@
-# Insecure Bank
+# Insecure Bank 2
 ![Insecure-Bank](https://hdivsecurity.com/img/bank.png)
 ## Running the application locally
 
