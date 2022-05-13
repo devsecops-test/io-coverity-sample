@@ -55,6 +55,9 @@ pipeline {
         
         stage('SAST- RapidScan') { environment {
             OSTYPE='linux-gnu' }
+            when {
+               expression { isSASTEnabled }
+            }
             steps {
                 echo 'Running SAST using Sigma - Rapid Scan'
                 echo env.OSTYPE
