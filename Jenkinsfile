@@ -35,7 +35,7 @@ pipeline {
                         owner: 'devsecops-test',
                         repositoryName: 'io-coverity-sample'), 
                     buildBreaker(configName: 'poc-bb')]) {
-                        sh 'io --stage io Persona.Type=devsecops Project.Release.Type=minor'
+                        sh 'io --stage io Persona.Type=developer Project.Release.Type=major'
                     }
 
                 script {
